@@ -2,7 +2,7 @@ body {
   background: no-repeat center/100% #907cff;
   background-image: linear-gradient(
     to bottom,
-    hsl(249, 50%, 40%) 0%,
+    #423399 0%,
     hsl(310, 30%, 50%) 60%,
     hsl(44, 50%, 75%) 100%
   );
@@ -53,20 +53,25 @@ footer {
   color: rgb(113, 35, 104);
 }
 
+a {
+  text-decoration: none;
+  color: #423399;
+}
+
+a:hover {
+  background-color: rgba(113, 35, 104, 0.2);
+}
+
 header form {
   margin: 0px auto;
 }
 
 input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-input:focus {
-  border: 1px solid white;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .current-emoji {
-  font-size: 128px;
+  font-size: 164px;
   margin: 0px;
 }
 
@@ -110,7 +115,6 @@ input:focus {
 
 .forecast-card-today {
   background-color: rgba(113, 35, 104, 0.2);
-  border: 1px solid white;
 }
 
 .search-input {
@@ -119,12 +123,26 @@ input:focus {
   border: 1px solid white;
   padding: 16px;
   font-family: "Source Code Pro", monospace;
+  font-size: 1rem;
+}
+
+.search-input:hover {
+  background-color: rgba(113, 35, 104, 0.2);
+}
+
+.search-input:focus-visible {
+  background-color: rgba(113, 35, 104, 0.2);
 }
 
 .search-button {
   background-color: rgb(113, 35, 104);
-  border: none;
+  border: 1px solid rgb(113, 35, 104);
   color: white;
   padding: 16px;
   font-family: "Source Code Pro", monospace;
+  font-size: 1rem;
+}
+
+.search-button:hover {
+  background-color: rgba(113, 35, 104, 0.8);
 }
