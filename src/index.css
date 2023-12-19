@@ -3,7 +3,7 @@ body {
   background-image: linear-gradient(
     to bottom,
     #423399 0%,
-    hsl(310, 30%, 50%) 60%,
+    rgb(166, 89, 153) 60%,
     hsl(44, 50%, 75%) 100%
   );
   display: flex;
@@ -68,6 +68,10 @@ header form {
 
 input::placeholder {
   color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+  outline: none;
 }
 
 .current-emoji {
