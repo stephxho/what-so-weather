@@ -6,9 +6,10 @@ body {
     rgb(166, 89, 153) 60%,
     hsl(44, 50%, 75%) 100%
   );
-
+  background-attachment: fixed;
   font-family: "Source Code Pro", monospace;
   color: white;
+  height: 100vh;
 }
 
 header {
@@ -16,6 +17,7 @@ header {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding-top: 40px;
 }
 
 main {
@@ -46,6 +48,7 @@ h3 {
 
 footer {
   color: rgb(113, 35, 104);
+  padding-bottom: 40px;
 }
 
 a {
@@ -71,10 +74,10 @@ input:focus {
 
 .content {
   display: flex;
-  height: 100vh;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  gap: 32px;
 }
 
 .bold {
@@ -87,8 +90,8 @@ input:focus {
 }
 
 .logo {
+  font-family: "Shadows Into Light", cursive;
   font-size: 80px;
-  font-weight: 900;
   opacity: 20%;
   margin: 0px 0px 24px 0px;
   text-align: center;
@@ -104,10 +107,12 @@ input:focus {
 .current {
   justify-content: center;
   gap: 80px;
+  flex-wrap: wrap;
 }
 
 .forecast {
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .current-temperature,
