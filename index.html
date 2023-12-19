@@ -5,46 +5,57 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
     <title>What so weather</title>
     <link rel="stylesheet" href="src/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
-      <section class="current-weather">
-        <p>19th Dec, 10:50 PM</p>
-        <p>⛅️</p>
-        <div>
-          <h2>Nuremberg</h2>
-          <p>Germany</p>
-        </div>
-        <div>
-          <h1>9</h1>
-          <p>°C</p>
-        </div>
-      </section>
-      <section>
-        <p class="logo">WHAT SO WEATHER</p>
-        <form>
-          <input type="search" placeholder="Enter a city..." required />
-          <input type="submit" value="Search" />
-        </form>
-      </section>
-      <section class="current-details">
-        <div>
-          <h3>50%</h3>
-          <p>Humidity</p>
-        </div>
-        <div>
-          <h3>1.4 km/h</h3>
-          <p>Wind speed</p>
-        </div>
-        <div>
-          <h3>0 %</h3>
-          <p>Chance of rain</p>
-        </div>
-      </section>
+      <p class="logo">WHAT-SO-WEATHER</p>
+      <form>
+        <input type="text" placeholder="Enter a city..." class="search-input" />
+        <input type="submit" value="Search" class="search-button" />
+      </form>
     </header>
+
     <main>
-      <div>
-        <div class="forecast-card">
+      <section class="current">
+        <div class="current-weather">
+          <div class="current-time">
+            <p>19th Dec, 10:50 PM</p>
+          </div>
+          <div class="current-location">
+            <h2>Nuremberg</h2>
+            <p>Germany</p>
+          </div>
+          <div class="current-temperature">
+            <h1>9</h1>
+            <p>°C</p>
+          </div>
+        </div>
+        <div class="current-emoji">
+          <h1>⛅️</h1>
+        </div>
+        <div class="current-details">
+          <div>
+            <p>Humidity</p>
+            <h3>50%</h3>
+          </div>
+          <div>
+            <p>Wind speed</p>
+            <h3>1.4 km/h</h3>
+          </div>
+          <div>
+            <p>Chance of rain</p>
+            <h3>0 %</h3>
+          </div>
+        </div>
+      </section>
+      <section class="forecast">
+        <div class="forecast-card-today">
           <p>Today</p>
           <p>🌦️</p>
           <p><span>9°</span>12°</p>
@@ -79,8 +90,9 @@
           <p>🌦️</p>
           <p><span>9°</span>12°</p>
         </div>
-      </div>
+      </section>
     </main>
+
     <footer>
       Coded by
       <a href="https://github.com/stephxho" target="_blank">StephX</a>,
