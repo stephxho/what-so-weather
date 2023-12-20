@@ -84,6 +84,16 @@ input:focus {
   font-weight: 700;
 }
 
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description p {
+  margin: 0px;
+}
+
 .current-emoji {
   font-size: 164px;
   margin: 0px;
