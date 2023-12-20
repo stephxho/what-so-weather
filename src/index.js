@@ -19,11 +19,10 @@ function refreshWeather(response) {
   currentTemperature.innerHTML = Math.round(response.data.temperature.current);
   currentCity.innerHTML = response.data.city;
   currentDescription.innerHTML = response.data.condition.description;
-  icon;
   currentHumidity.innerHTML = response.data.temperature.humidity;
   currentCountry.innerHTML = response.data.country;
   currentPressure.innerHTML = response.data.temperature.pressure;
-  currentWindSpeed.innerHTML = response.data.wind.speed;
+  currentWindSpeed.innerHTML = Math.round(response.data.wind.speed);
   currentTime.innerHTML = formatDate(date);
 }
 
