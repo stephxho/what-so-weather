@@ -3,6 +3,13 @@ function refreshWeather(response) {
   let currentTemperature = document.querySelector("#current-temperature");
   let currentCity = document.querySelector("#current-city");
   let currentDescription = document.querySelector("#current-description");
+  let icon = document.querySelector("#icon");
+
+  icon.innerHTML = `<img
+      src="${response.data.condition.icon_url}"
+      class="icon"
+    />`;
+
   let currentHumidity = document.querySelector("#current-humidity");
   let currentCountry = document.querySelector("#current-country");
   let currentPressure = document.querySelector("#current-pressure");
@@ -12,12 +19,14 @@ function refreshWeather(response) {
   currentTemperature.innerHTML = Math.round(response.data.temperature.current);
   currentCity.innerHTML = response.data.city;
   currentDescription.innerHTML = response.data.condition.description;
+  icon;
   currentHumidity.innerHTML = response.data.temperature.humidity;
   currentCountry.innerHTML = response.data.country;
   currentPressure.innerHTML = response.data.temperature.pressure;
   currentWindSpeed.innerHTML = response.data.wind.speed;
   currentTime.innerHTML = formatDate(date);
 }
+
 function formatDate(date) {
   let minutes = date.getMinutes();
   let hours = date.getHours();
