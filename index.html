@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>What so weather</title>
     <link rel="stylesheet" href="src/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,11 +28,12 @@
     <div class="content">
       <header>
         <p class="logo">WHATS-O-WEATHER!</p>
-        <form>
+        <form id="search-form">
           <input
-            type="text"
+            type="search"
             placeholder="Enter a city..."
             class="search-input"
+            id="search-input"
           />
           <input type="submit" value="Search" class="search-button" />
         </form>
@@ -45,7 +46,7 @@
               <p>19th Dec, 10:50 PM</p>
             </div>
             <div class="current-location">
-              <h2>Nuremberg</h2>
+              <h2 id="current-city">Nuremberg</h2>
               <p>Germany</p>
             </div>
             <div class="current-temperature">
@@ -73,7 +74,7 @@
             </div>
           </div>
         </section>
-        <section class="forecast">
+        <!-- <section class="forecast">
           <div class="forecast-card-today">
             <p>Today</p>
             <p>🌦️</p>
@@ -109,7 +110,7 @@
             <p>🌦️</p>
             <p><span class="bold">9° </span>12°</p>
           </div>
-        </section>
+        </section> -->
       </main>
 
       <footer>
@@ -125,5 +126,6 @@
         >
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
