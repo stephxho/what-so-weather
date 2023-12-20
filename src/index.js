@@ -1,4 +1,5 @@
 function refreshWeather(response) {
+  console.log(response.data);
   let currentTemperature = document.querySelector("#current-temperature");
   let currentCity = document.querySelector("#current-city");
   let currentDescription = document.querySelector("#current-description");
@@ -6,13 +7,51 @@ function refreshWeather(response) {
   let currentCountry = document.querySelector("#current-country");
   let currentPressure = document.querySelector("#current-pressure");
   let currentWindSpeed = document.querySelector("#current-wind-speed");
+  let currentTime = document.querySelector("#current-time");
+  let date = new Date(response.data.time * 1000);
   currentTemperature.innerHTML = Math.round(response.data.temperature.current);
   currentCity.innerHTML = response.data.city;
   currentDescription.innerHTML = response.data.condition.description;
   currentHumidity.innerHTML = response.data.temperature.humidity;
   currentCountry.innerHTML = response.data.country;
-  currentPressure = response.data.temperature.pressure;
-  currentWindSpeed = response.data.wind.speed;
+  currentPressure.innerHTML = response.data.temperature.pressure;
+  currentWindSpeed.innerHTML = response.data.wind.speed;
+  currentTime.innerHTML = formatDate(date);
+}
+function formatDate(date) {
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
+
+  return `${day}, ${month} ${date.getDate()}, ${hours}:${minutes}`;
 }
 
 function searchCity(city) {
