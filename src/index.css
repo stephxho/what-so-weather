@@ -168,6 +168,11 @@ input:focus {
   background-color: rgba(113, 35, 104, 0.2);
 }
 
+.weather-forecast-icon {
+  width: 64px;
+  height: 64px;
+}
+
 .search-input {
   background-color: transparent;
   color: white;
