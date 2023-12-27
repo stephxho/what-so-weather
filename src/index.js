@@ -24,6 +24,8 @@ function refreshWeather(response) {
   currentPressure.innerHTML = response.data.temperature.pressure;
   currentWindSpeed.innerHTML = Math.round(response.data.wind.speed);
   currentTime.innerHTML = formatDate(date);
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -77,13 +79,21 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "8b568tdd52ea0467a4ff3f2cbo8f1f31";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
   let forecastHtml = "";
 
   days.forEach(function (day) {
     forecastHtml += `
-<div class="forecast-card">
+          <div class="forecast-card">
             <div class="weather-forecast-date">${day}</div>
             <div class="weather-forecast-icon">🌦️</div>
             <div class="weather-forecast-temperatures">
@@ -100,4 +110,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Nuremberg");
-displayForecast();
