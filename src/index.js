@@ -77,7 +77,27 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml += `
+<div class="forecast-card">
+            <div class="weather-forecast-date">${day}</div>
+            <div class="weather-forecast-icon">🌦️</div>
+            <div class="weather-forecast-temperatures">
+              <span class="bold">9° </span>12°</div>
+          </div>
+`;
+  });
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Nuremberg");
+displayForecast();
